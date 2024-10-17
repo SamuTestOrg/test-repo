@@ -26,13 +26,5 @@ def test_sources_9(something):
 
     return "foo"
 
-# curl -X GET "http://localhost:5000/tainted10/touch%20HELLO"
-@app.route("/tainted10/<something>")
-def test_sources_10(something):
-
-    os.system(request.remote_addr)
-
-    return "foo"
-
 if __name__ == "__main__":
 	app.run(debug=True)
